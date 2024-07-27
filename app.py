@@ -10,7 +10,7 @@ img_contact_from = Image.open("images/Hemanth.png")
 ## --- Header Section ---
 with st.container():
     st.subheader("Hi, I am Hemanth Tadikonda :wave: ")
-    st.title("A DevOps Engineer from HCL Tech :\U0001F1EE\U0001F1F3: ")
+    st.title("A DevOps Engineer from HCL Tech ")
     st.write(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline.")
     st.write("[About HCL Tech >](https://en.wikipedia.org/wiki/HCLTech)")
 
@@ -47,17 +47,52 @@ with st.container():
             '''
         )
 
+## ---- Regular responsibilities ---
+with st.container():
+    st.subheader("Regular responsibilities :seat:")
+    st.write(
+        '''
+•	As DevOps team we work together to deliver Highly available & secure applications to users, customers & employees of Volvo group. \n
+•	Worked with various tools, which includes Version controls Tool – Git and GitHub, build tool - Maven, Continuous Integration Tools - Jenkins, Automation Tool – Ansible, Cloud Tools - AWS, Cloud Formation Tool – Terraform and Platform, – Red Hat Linux. \n
+•	Providing support to create and maintain github repository. And provide access based on requirements. \n
+•	Involved in Creating CI/CD pipelines by integrating Git, GitHub, Jenkins, ansible, terraform, docker. \n
+•	Coordinating with the Development team to fix the Build related issues. \n
+•	Experience in creating automated environment to build and deploy of code with in different environments (Dev, QA, and Prod). \n
+•	Monitored the automated build and continuous integration process to ensure correct build execution, and facilitate resolution of build/ release failures. \n
+•	Involved in Installing Jenkins on a Linux machine and created a master and slave configuration. \n
+•	Used Jenkins for Continuous Integration and deployment into Tomcat Application Server, Apache httpd server, Nginx Web server. \n
+•	Installed, configured and administration of Nginx Web server Network Deployment for Reverse Proxy configurations on Linux Server. \n
+•	Set up of Application environment which includes installation of products like Apache Tomcat server on UNIX, Linux and Windows platform. \n
+•	Creating shell scripts for regular activities and scheduling cronjobs. \n
+•	Experience in writing ansible scripts. \n 
+•	Experience writing & updating terraform code. \n
+•	Experience in Install and configure docker to build and test containerized applications. \n
+•	Responsible for managing the Docker private registry. \n
+•	Coordinating with the Developers create docker files, build images with those files. \n
+•	Deploy and configure various applications on EC2 instances with restricted policies. \n
+•	Experience in creating private network to applications using AWS VPC. \n
+•	Providing access to components on cloud using AWS IAM. \n
+•	Create & Maintain Hosted zones in AWS Route 53. \n
+•	Experience in Creating & configure Load Balancer to applications. \n
+•	Coordinating with team in Application Cloud Migration Process. \n
+•	Work with Dev and QA teams closely to make sure builds available all the time. \n
+•	Communicating and working with development, and test teams to resolve build related issues in a high priority manner. \n
+
+'''
+    )
+
+
 
 ## ---- what i do ----
 
 with st.container():
-    st.write("---")
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.header("What I Do")
-        st.write("##")
-        st.write(
-            '''
+st.write("---")
+left_column, right_column = st.columns(2)
+with left_column:
+    st.header("What I Do")
+    st.write("##")
+    st.write(
+        '''
             Continuous Integration and Continuous Deployment (CI/CD):\n
             Infrastructure as Code (IaC):\n
             Configuration Management:\n
