@@ -1,6 +1,5 @@
 # Use the CentOS 7 base image
 FROM centos:7
-RUN  yum install epel-release -y
 
 # Install Python3, pip, Development Tools, and other dependencies
 RUN yum install -y python3 && \
