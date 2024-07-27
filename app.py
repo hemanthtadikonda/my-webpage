@@ -1,5 +1,4 @@
 from PIL import Image
-
 import streamlit as st
 
 st.set_page_config(page_title="My Webpage",page_icon=":tada:",layout="wide")
@@ -10,10 +9,43 @@ img_contact_from = Image.open("images/Hemanth.png")
 
 ## --- Header Section ---
 with st.container():
-    st.subheader("Hi, I am Hemanth :wave: ")
-    st.title("A DevOps Engineer from HCL Tech")
-    st.write(" I am passinate about automate deployments ")
-    st.write("[Laern More >](https://github.com/hemanthtadikonda)")
+    st.subheader("Hi, I am Hemanth Tadikonda :wave: ")
+    st.title("A DevOps Engineer from HCL Tech :flag_inda:")
+    st.write(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline.")
+    st.write("[About HCL Tech >](https://en.wikipedia.org/wiki/HCLTech)")
+
+## ---- About Me ---
+with st.container():
+    st.write("---")
+    st.header("About Me")
+    st.write("##")
+    image_column,text_column = st.columns((1,2))
+    with image_column:
+        st.image(img_contact_from)
+    with text_column:
+        st.subheader("Professional Summary:")
+        st.write(
+            '''
+            	Around 3 years of experience in IT industry with major focus on Configuration Management, Build & Release Management, Infrastructure Management and CI/CD automation. Worked as AWS and DevOps engineer in various dynamic environments.
+            	Worked on Microservices architecture which includes diversified tech stack involved in them.
+            	Good hands-on AWS services like EC2, EKS, S3, Secret Manager, IAM, ACM, VPC, RDS, ElasticCache, DocumentDB.
+            	Experience in writing Multi environment Infrastructure code using Terraform.  
+            	Experience working with version control systems like GIT and used Source code management tools GitHub. 
+            	Implemented a CI/CD pipeline involving GitHub, Jenkins, Ansible, and Terraform for complete automation from commit to deployment for Mutable and Immutable Infrastructures.
+            	Good hands-on Jenkins pipelines with shared libraries. 
+            	Installed and Configured Nexus Repositories. 
+            	Implemented SAST practices using SonarQube.
+            	Installed and configured Ansible and created Ansible Playbooks for deployments and patch management. 
+            	Extensively used configuration management tool with Ansible Roles. 
+            	Hands-on experience using Maven, NodeJS, Python & GoLang as the build tool for building of deployable artifacts from source code. 
+            	Strong experience with monitoring tools such as Prometheus & Grafana. 
+            	Experience in Log aggregation with ELK.
+            	Hands-on experience creating container images with Dockerfiles.
+            	Good understanding of Kubernetes in managing Docker containers.
+            '''
+        )
+        st.write("[Learn docker >](https://github.com/hemanthtadikonda/learn-docker.git)")
+
 
 ## ---- what i do ----
 
@@ -21,7 +53,7 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("What i do")
+        st.header("What I Do")
         st.write("##")
         st.write(
             '''
@@ -30,25 +62,33 @@ with st.container():
             Configuration Management:
             Monitoring and Logging:
             Containerization and Orchestration:
-            '''
+           '''
         )
-        st.write("[Know More >](https://github.com/hemanthtadikonda)")
+    with right_column:
+        st.write("##")
+        st.write("##")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/rb-jenkins)")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/rb-terraform)")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/rb-ansible)")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/rb-ansible/tree/main/roles/elk)")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/learn-docker)")
+        st.write("[ To Know More >](https://github.com/hemanthtadikonda/learn-helm)")
 
 
-#---  Projects ----
-with st.container():
-    st.write("---")
-    st.header("My Projects")
-    st.write("##")
-    image_column,text_column = st.columns((1,2))
-    with image_column:
-        st.image(img_contact_from)
-    with text_column:
-        st.subheader("Containerization")
-        st.write(
-            '''
-            The Projects which i make through Containerization
-            you can search in hub.docker.com with user "hemanthtadikonda"
-            '''
-        )
-        st.write("[Learn docker >](https://github.com/hemanthtadikonda/learn-docker.git)")
+# #---  Projects ----
+# with st.container():
+#     st.write("---")
+#     st.header("My Projects")
+#     st.write("##")
+#     image_column,text_column = st.columns((1,2))
+#     with image_column:
+#         st.image(img_contact_from)
+#     with text_column:
+#         st.subheader("Containerization")
+#         st.write(
+#             '''
+#             The Projects which i make through Containerization
+#             you can search in hub.docker.com with user "hemanthtadikonda"
+#             '''
+#         )
+#         st.write("[Learn docker >](https://github.com/hemanthtadikonda/learn-docker.git)")
