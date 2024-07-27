@@ -10,7 +10,7 @@ img_contact_from = Image.open("images/Hemanth.png")
 ## --- Header Section ---
 with st.container():
     st.subheader("Hi, I am Hemanth Tadikonda :wave: ")
-    st.title("A DevOps Engineer from HCL Tech :flag_inda:")
+    st.title("A DevOps Engineer from HCL Tech :flag_inda: ")
     st.write(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline.")
     st.write("[About HCL Tech >](https://en.wikipedia.org/wiki/HCLTech)")
 
@@ -26,22 +26,22 @@ with st.container():
         st.subheader("Professional Summary:")
         st.write(
             '''
-            	Around 3 years of experience in IT industry with major focus on Configuration Management, Build & Release Management, Infrastructure Management and CI/CD automation. Worked as AWS and DevOps engineer in various dynamic environments.
-            	Worked on Microservices architecture which includes diversified tech stack involved in them.
-            	Good hands-on AWS services like EC2, EKS, S3, Secret Manager, IAM, ACM, VPC, RDS, ElasticCache, DocumentDB.
-            	Experience in writing Multi environment Infrastructure code using Terraform.  
-            	Experience working with version control systems like GIT and used Source code management tools GitHub. 
-            	Implemented a CI/CD pipeline involving GitHub, Jenkins, Ansible, and Terraform for complete automation from commit to deployment for Mutable and Immutable Infrastructures.
-            	Good hands-on Jenkins pipelines with shared libraries. 
-            	Installed and Configured Nexus Repositories. 
-            	Implemented SAST practices using SonarQube.
-            	Installed and configured Ansible and created Ansible Playbooks for deployments and patch management. 
-            	Extensively used configuration management tool with Ansible Roles. 
-            	Hands-on experience using Maven, NodeJS, Python & GoLang as the build tool for building of deployable artifacts from source code. 
-            	Strong experience with monitoring tools such as Prometheus & Grafana. 
-            	Experience in Log aggregation with ELK.
-            	Hands-on experience creating container images with Dockerfiles.
-            	Good understanding of Kubernetes in managing Docker containers.
+            	Around 3 years of experience in IT industry with major focus on Configuration Management, Build & Release Management, Infrastructure Management and CI/CD automation. Worked as AWS and DevOps engineer in various dynamic environments.\n
+            	Worked on Microservices architecture which includes diversified tech stack involved in them.\n
+            	Good hands-on AWS services like EC2, EKS, S3, Secret Manager, IAM, ACM, VPC, RDS, ElasticCache, DocumentDB.\n
+            	Experience in writing Multi environment Infrastructure code using Terraform.\n  
+            	Experience working with version control systems like GIT and used Source code management tools GitHub.\n
+            	Implemented a CI/CD pipeline involving GitHub, Jenkins, Ansible, and Terraform for complete automation from commit to deployment for Mutable and Immutable Infrastructures.\n
+            	Good hands-on Jenkins pipelines with shared libraries.\n
+            	Installed and Configured Nexus Repositories.\n 
+            	Implemented SAST practices using SonarQube.\n
+            	Installed and configured Ansible and created Ansible Playbooks for deployments and patch management.\n
+            	Extensively used configuration management tool with Ansible Roles.\n
+            	Hands-on experience using Maven, NodeJS, Python & GoLang as the build tool for building of deployable artifacts from source code.\n
+            	Strong experience with monitoring tools such as Prometheus & Grafana.\n
+            	Experience in Log aggregation with ELK.\n
+            	Hands-on experience creating container images with Dockerfiles.\n
+            	Good understanding of Kubernetes in managing Docker containers.\n
             '''
         )
         st.write("[Learn docker >](https://github.com/hemanthtadikonda/learn-docker.git)")
@@ -57,11 +57,11 @@ with st.container():
         st.write("##")
         st.write(
             '''
-            Continuous Integration and Continuous Deployment (CI/CD):
-            Infrastructure as Code (IaC):
-            Configuration Management:
-            Monitoring and Logging:
-            Containerization and Orchestration:
+            Continuous Integration and Continuous Deployment (CI/CD):\n
+            Infrastructure as Code (IaC):\n
+            Configuration Management:\n
+            Monitoring and Logging:\n
+            Containerization and Orchestration:\n
            '''
         )
     with right_column:
