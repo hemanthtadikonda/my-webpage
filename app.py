@@ -86,12 +86,12 @@ with st.container():
 ## ---- what i do ----
 
 with st.container():
-st.write("---")
-left_column, right_column = st.columns(2)
-with left_column:
-    st.header("What I Do")
-    st.write("##")
-    st.write(
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.header("What I Do")
+        st.write("##")
+        st.write(
         '''
             Continuous Integration and Continuous Deployment (CI/CD):\n
             Infrastructure as Code (IaC):\n
