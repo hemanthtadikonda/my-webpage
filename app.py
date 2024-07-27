@@ -10,7 +10,7 @@ img_contact_from = Image.open("images/Hemanth.png")
 ## --- Header Section ---
 with st.container():
     st.subheader("Hi, I am Hemanth Tadikonda :wave: ")
-    st.title("A DevOps Engineer from HCL Tech \U0001F1EE\U0001F1F3 ")
+    st.title("A DevOps Engineer from HCL Tech :\U0001F1EE\U0001F1F3: ")
     st.write(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline.")
     st.write("[About HCL Tech >](https://en.wikipedia.org/wiki/HCLTech)")
 
