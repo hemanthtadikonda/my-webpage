@@ -11,7 +11,7 @@ img_contact_from = Image.open("images/Hemanth.png")
 with st.container():
     st.subheader("Hi, I am Hemanth Tadikonda :wave: ")
     st.title("A DevOps Engineer from HCL Tech :laptop: ")
-    st.write(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline. :laptop:")
+    st.subheader(" I am a passionate DevOps Engineer with a keen interest in automating deployments and optimizing the software delivery pipeline. :laptop:")
     st.write("[About HCL Tech >](https://en.wikipedia.org/wiki/HCLTech)")
 
 ## ---- About Me ---
