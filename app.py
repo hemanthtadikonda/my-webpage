@@ -49,6 +49,7 @@ with st.container():
 
 ## ---- Regular responsibilities ---
 with st.container():
+    st.write("---")
     st.subheader("Regular responsibilities :seat:")
     st.write(
         '''
