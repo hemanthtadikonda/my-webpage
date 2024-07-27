@@ -42,7 +42,7 @@ with st.container():
     st.write("##")
     image_column,text_column = st.columns((1,2))
     with image_column:
-        st.image(img_contact_from)
+        st.image(img_contact_from , height = 200)
     with text_column:
         st.subheader("Containerization")
         st.write(
