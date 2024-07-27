@@ -1,6 +1,12 @@
+from PIL import Image
+
 import streamlit as st
 
 st.set_page_config(page_title="My Webpage",page_icon=":tada:",layout="wide")
+
+# ---- Load Assets ---
+img_contact_from = Image.open("images/Hemanth.png")
+
 
 ## --- Header Section ---
 with st.container():
@@ -34,7 +40,9 @@ with st.container():
     st.write("---")
     st.header("My Projects")
     st.write("##")
-    image_column, text_column = st.columns((1,2))
+    image_column,text_column = st.columns((1,2))
+    with image_column:
+        st.image(img_contact_from)
     with text_column:
         st.subheader("Containerization")
         st.write(
