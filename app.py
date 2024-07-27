@@ -3,11 +3,6 @@ import streamlit as st
 
 st.set_page_config(page_title="My Webpage",page_icon=":tada:",layout="wide")
 
-import streamlit as st
-
-
-st.set_page_config(page_title="My Webpage",page_icon=":tada:",layout="wide")
-
 ## --- Header Section ---
 st.subheader("Hi, I am Hemanth :wave: ")
 st.title("A DevOps Engineer from HCL Tech")
