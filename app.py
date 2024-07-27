@@ -27,3 +27,22 @@ with st.container():
             '''
         )
         st.write("[Know More >](https://github.com/hemanthtadikonda)")
+
+
+#---  Projects ----
+with st.container():
+    st.write("---")
+    st.header("My Projects")
+    st.write("##")
+    image_column,text_column = st.columns ((1,2))
+    with image_column:
+        # lean
+    with text_column:
+        st.subheader("Containerization")
+        st.write(
+            '''
+            The Projects which i make through Containerization
+            you can search in hub.docker.com with user "hemanthtadikonda"
+            '''
+        )
+        st.write("[Learn docker >](https://github.com/hemanthtadikonda/learn-docker.git)")
