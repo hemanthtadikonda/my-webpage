@@ -50,7 +50,7 @@ with st.container():
 ## ---- Regular responsibilities ---
 with st.container():
     st.write("---")
-    st.subheader("Regular responsibilities :laptop:")
+    st.subheader("Regular responsibilities :desktop_computer:")
     st.write(
         '''
 •	As DevOps team we work together to deliver Highly available & secure applications to users, customers & employees of Volvo group. \n
