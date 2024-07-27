@@ -90,7 +90,7 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("What I Do")
+        st.header("My Contributions :technologist:")
         st.write("##")
         st.write(
         '''
