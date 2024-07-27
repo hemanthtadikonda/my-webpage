@@ -15,7 +15,7 @@ with st.container():
 
 with st.container():
     st.write("---")
-    left_colum,right_colum = st.colum (2)
+    left_colum,right_colum = st.colum(2)
 
     with left_coulm:
         st.header("What i do")
