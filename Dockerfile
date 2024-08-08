@@ -12,14 +12,10 @@
 ## Install Streamlit
 #RUN pip3 install streamlit
 
-FROM samdobson/streamlit as base
-
+FROM samdobson/streamlit
 
 WORKDIR /app
 ADD ./ /app
-
-FROM gcr.io/distroless/base
-COPY --from=base /app .
 
 EXPOSE 8501
 
