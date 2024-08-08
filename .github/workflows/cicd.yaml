@@ -10,8 +10,9 @@ on:
       paths-ignore:
          - 'helm/**'
          - 'k8s/**'
+         - 'gitops'
          - 'README.md'
-         -
+
 jobs:
    test:
       runs-on: ubuntu-latest
