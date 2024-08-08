@@ -16,7 +16,7 @@ spec:
       spec:
          containers:
             - name: my-web-app
-              image: hemanthtadikonda/my-app
+              image: hemanthtadikonda/my-app:10296419433
               ports:
                  - containerPort: 8501
               resources:
