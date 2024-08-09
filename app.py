@@ -45,7 +45,6 @@ with st.container():
             	Experience in Log aggregation with ELK.\n
             	Hands-on experience creating container images with Dockerfiles.\n
             	Good understanding of Kubernetes in managing Docker containers.\n
-            	Proficient in implementing CI/CD pipelines using GitHub Actions, with hands-on experience in GitOps practices and automated deployments using ArgoCD.\n
             '''
         )
 
