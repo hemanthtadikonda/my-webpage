@@ -1,0 +1,76 @@
+---
+- name: Setup CentOS Environment
+  hosts: all
+  become: yes
+  tasks:
+     - name: Install Python 3
+       yum:
+          name: python3
+          state: present
+
+     - name: Install Python 3 pip
+       yum:
+          name: python3-pip
+          state: present
+
+     - name: Install Development Tools
+       yum:
+          name: '@Development Tools'
+          state: present
+
+     - name: Install EPEL repository
+       yum:
+          name: epel-release
+          state: present
+
+     - name: Install additional development libraries
+       yum:
+          name:
+             - cmake3
+             - gcc-c++
+             - make
+             - autoconf
+             - automake
+             - libtool
+             - zlib-devel
+             - libcurl-devel
+             - bzip2-devel
+             - openssl-devel
+             - xz-devel
+             - wget
+             - libffi-devel
+          state: present
+
+     - name: Upgrade pip, setuptools, and wheel
+       pip:
+          name:
+             - pip
+             - setuptools
+             - wheel
+          state: latest
+          executable: pip3
+
+     - name: Install pyarrow
+       pip:
+          name: pyarrow
+          state: present
+          executable: pip3
+
+     - name: Install streamlit
+       pip:
+          name: streamlit
+          state: present
+          executable: pip3
+
+     - name: Clone the Git repository
+       git:
+          repo: 'https://github.com/hemanthtadikonda/my-webpage.git'
+          dest: '/home/centos/my-webpage'
+          clone: yes
+
+     - name: Run Streamlit app
+       command: streamlit run /home/centos/my-webpage/app.py
+       args:
+          chdir: /home/centos/my-webpage
+       async: 10
+       poll: 0
