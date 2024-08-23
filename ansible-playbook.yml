@@ -65,12 +65,12 @@
      - name: Clone my-webpage repository
        git:
           repo: https://github.com/hemanthtadikonda/my-webpage.git
-          dest: /home/{{ ansible_user }}/my-webpage
+          dest: /home/centos/my-webpage
           clone: yes
 
      - name: Run Streamlit app
-       command: streamlit run /home/{{ ansible_user }}/my-webpage/app.py
+       command: streamlit run /home/centos/my-webpage/app.py
        args:
-          chdir: /home/{{ ansible_user }}/my-webpage
+          chdir: /home/centos/my-webpage
        async: 10
        poll: 0
