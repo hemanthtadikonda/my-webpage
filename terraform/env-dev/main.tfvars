@@ -4,7 +4,7 @@ vpc = {
     subnets = {
       public = {
         public1 = "10.0.0.0/27" , az = "us-east-1a"
-        public2 = "10.0.0.32/2" , az = "us-east-1b"
+        public2 = "10.0.0.32/27" , az = "us-east-1b"
       }
       app = {
         app1 = "10.0.0.64/27" , az = "us-east-1a"
