@@ -72,5 +72,3 @@
        command: streamlit run /home/centos/my-webpage/app.py
        args:
           chdir: /home/centos/my-webpage
-       async: 10
-       poll: 0
