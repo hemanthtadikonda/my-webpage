@@ -1,7 +1,12 @@
-resource "aws_vpc" "main" {
+
+
+module "vpc" {
+  source = "./vpc"
   for_each = var.vpc
 
-  cidr_block = each.value["cidr"]
+  cidr    = each.value[ "cidr" ]
+  subnets = each.value [ "subnets" ]
+
+
+  vpc_id = aws_vpc.main.id
 }
-
-
