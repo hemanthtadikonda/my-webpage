@@ -1,5 +1,5 @@
 ---
-- name: Setup CentOS Environment
+- name: Set up environment and run Streamlit app
   hosts: all
   become: yes
   tasks:
@@ -18,12 +18,12 @@
           name: '@Development Tools'
           state: present
 
-     - name: Install EPEL repository
+     - name: Install EPEL Repository
        yum:
           name: epel-release
           state: present
 
-     - name: Install additional development libraries
+     - name: Install additional packages
        yum:
           name:
              - cmake3
@@ -62,15 +62,15 @@
           state: present
           executable: pip3
 
-     - name: Clone the Git repository
+     - name: Clone my-webpage repository
        git:
-          repo: 'https://github.com/hemanthtadikonda/my-webpage.git'
-          dest: '/home/centos/my-webpage'
+          repo: https://github.com/hemanthtadikonda/my-webpage.git
+          dest: /home/{{ ansible_user }}/my-webpage
           clone: yes
 
      - name: Run Streamlit app
-       command: streamlit run /home/centos/my-webpage/app.py
+       command: streamlit run /home/{{ ansible_user }}/my-webpage/app.py
        args:
-          chdir: /home/centos/my-webpage
+          chdir: /home/{{ ansible_user }}/my-webpage
        async: 10
        poll: 0
