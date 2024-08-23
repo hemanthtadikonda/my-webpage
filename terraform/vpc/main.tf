@@ -8,5 +8,7 @@ resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = each.value[ "cidr" ]
   availability_zone = each.value[ "az" ]
-  Name             = each.key
+  tags = {
+    Name = each.key
+  }
 }
