@@ -1,13 +1,12 @@
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/24"
-}
+
 
 resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.0.0/26"
-  availability_zone = "us-east-1a"
+  for_each = each.value
+  vpc_id     = var.vpc_id
+  cidr_block = each.value["cidr"]
+  availability_zone = each.value["az"]
 
   tags = {
-    Name = "Main"
+    Name = each.key
   }
 }
