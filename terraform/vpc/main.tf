@@ -29,7 +29,7 @@ resource "aws_route" "igw" {
 resource "aws_eip" "ngw" {
   count  = length(local.public_subnets_id)
   domain = "vpc"
-  tags   = merge(local.tags,{ Name = "${var.env}-eip-${count.index+1}" })
+  tags   = merge(local.tags,{ Name = "${var.env}-myapp-eip-${count.index+1}" })
 }
 
 resource "aws_nat_gateway" "ngw" {
@@ -37,5 +37,5 @@ resource "aws_nat_gateway" "ngw" {
 
   allocation_id = element(aws_eip.ngw.*.id,count.index )
   subnet_id     = element(local.public_subnets_id,count.index )
-  tags          = merge(local.tags,{ Name = "${var.env}-ngw-${count.index+1}" })
+  tags          = merge(local.tags,{ Name = "${var.env}-myapp-ngw-${count.index+1}" })
 }
