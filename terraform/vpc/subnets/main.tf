@@ -15,8 +15,8 @@ resource "aws_route_table" "main" {
   tags     = { Name = "${each.key}-rt" }
 }
 
-resource "aws_route_table_association" "association" {
-  for_each = var.subnets
-  subnet_id      = aws_subnet.main.id
-  route_table_id = aws_route_table.main.id
-}
+#resource "aws_route_table_association" "association" {
+#  for_each = var.subnets
+#  subnet_id      = aws_subnet.main.id
+#  route_table_id = aws_route_table.main.id
+#}
