@@ -24,3 +24,7 @@ tags = {
 }
 
 env = "dev"
+
+default_vpc_id = "vpc-05642ce42b99a7fae"
+default_vpc_cidr_block = "172.31.0.0/16"
+def_route_table_id = "rtb-0dbc8b1b5e435955e"

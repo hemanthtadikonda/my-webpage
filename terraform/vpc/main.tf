@@ -47,3 +47,22 @@ resource "aws_route" "ngw-route" {
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = element(aws_nat_gateway.ngw.*.id,count.index )
 }
+
+resource "aws_vpc_peering_connection" "peering" {
+  peer_vpc_id   = aws_vpc.main.id
+  vpc_id        = var.default_vpc_id  // requester
+  auto_accept   = true // same account same region
+  tags          = merge(local.tags,{ Name = "${var.env}-vpc-peering" })
+}
+resource "aws_route" "peer" {
+  count                     = length(local.app_route_table_ids)
+  route_table_id            = element(local.app_route_table_ids,count.index )
+  destination_cidr_block    = var.default_vpc_cidr_block
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
+}
+
+resource "aws_route" "default-vpc-peer-entry" {
+  route_table_id            = var.def_route_table_id
+  destination_cidr_block    = var.cidr
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
+}
