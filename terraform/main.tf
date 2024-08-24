@@ -7,5 +7,9 @@ module "vpc" {
   cidr    = each.value[ "cidr" ]
   subnets = each.value [ "subnets" ]
 
+  tags = var.tags
+  env  = var.env
+
+
 
 }

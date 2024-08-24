@@ -15,3 +15,12 @@ vpc = {
     }
   }
 }
+
+tags = {
+  organization  = "TCL TECH"
+  project_name  = "my-app"
+  business_unit = "DFS"
+  tower         = "AOD-AOM"
+}
+
+env = "dev"

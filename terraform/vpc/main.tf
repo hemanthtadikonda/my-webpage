@@ -1,6 +1,6 @@
 resource "aws_vpc" "main" {
   cidr_block = var.cidr
-  tags       = { Name = "myapp-vpc" }
+  tags       = merge(local.tags,{ Name = "${var.env}-myapp-vpc" })
 }
 
 module "subnets" {
@@ -8,12 +8,14 @@ module "subnets" {
   for_each = var.subnets
   vpc_id   = aws_vpc.main.id
   subnets  = each.value
+  env      = var.env
+  tags     = local.tags
 
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
-  tags   = { Name = "myapp-igw" }
+  tags   = merge(local.tags,{ Name = "${var.env}-myapp-igw" })
 }
 
 resource "aws_route" "igw" {
@@ -27,5 +29,13 @@ resource "aws_route" "igw" {
 resource "aws_eip" "ngw" {
   count  = length(local.public_subnets_id)
   domain = "vpc"
-  tags   = { Name = "myapp-eip-${count.index+1}" }
+  tags   = merge(local.tags,{ Name = "${var.env}-eip-${count.index+1}" })
+}
+
+resource "aws_nat_gateway" "ngw" {
+  count         = length(local.public_subnets_id)
+
+  allocation_id = element(aws_eip.ngw.*.id,count.index )
+  subnet_id     = element(local.public_subnets_id,count.index )
+  tags          = merge(local.tags,{ Name = "${var.env}-ngw-${count.index+1}" })
 }
