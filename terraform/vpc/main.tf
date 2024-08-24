@@ -39,3 +39,10 @@ resource "aws_nat_gateway" "ngw" {
   subnet_id     = element(local.public_subnets_id,count.index )
   tags          = merge(local.tags,{ Name = "${var.env}-myapp-ngw-${count.index+1}" })
 }
+
+resource "aws_route" "ngw-route" {
+  count                  = length(local.app_subnets_id)
+  route_table_id         = element(local.app_subnets_id,count.index )
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = element(aws_nat_gateway.ngw.*.id,count.index )
+}
