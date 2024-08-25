@@ -39,7 +39,7 @@ resource "aws_launch_template" "main" {
     tags          = merge(local.tags,{ Name = "${var.env}-myapp-template" })
   }
 
-  user_data = base64encode(templatefile("${path.module}/userdata.sh"))
+  user_data = base64encode("${path.module}/userdata.sh")
 }
 
 resource "aws_autoscaling_group" "main" {
@@ -102,7 +102,7 @@ resource "aws_lb_target_group" "public" {
 
 resource "aws_lb_target_group_attachment" "public" {
   target_group_arn = aws_lb_target_group.public.arn
-  target_id        = element(tolist(data.dns_a_record_set.private_lb_add.addrs), count.index )
+  target_id        = tolist(data.dns_a_record_set.private_lb_add.addrs)
   port             = 80
   availability_zone = "all"
 }
