@@ -55,9 +55,9 @@ module "app" {
   sg_ingress_cidr = local.app_subnets_cidr
 
   public_alb_name  = lookup(lookup(lookup(module.alb , "public" , null) , "alb" ,null), "dns_name",null)
-  private_alb_name = lookup(lookup(lookup(module.alb , "internal" , null) , "alb" ,null), "dns_name",null)
+  private_alb_name = lookup(lookup(lookup(module.alb , "private" , null) , "alb" ,null), "dns_name",null)
   public_alb_listener =lookup(lookup(lookup(module.alb , "public" ,null ), "lb_listener" , null) , "arn" , null )
-  private_alb_listener = lookup(lookup(lookup(module.alb , "internal" ,null ), "lb_listener" , null) , "arn" , null )
+  private_alb_listener = lookup(lookup(lookup(module.alb , "private" ,null ), "lb_listener" , null) , "arn" , null )
 }
 
 
