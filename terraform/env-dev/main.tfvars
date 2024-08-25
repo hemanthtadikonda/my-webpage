@@ -69,11 +69,3 @@ app = {
 
 
 
-
-
-
-variable "zone_id" {}
-variable "ssh_ingress_cidr" {}
-
-
-
