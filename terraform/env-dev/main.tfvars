@@ -31,7 +31,7 @@ default_vpc_cidr_block = "172.31.0.0/16"
 def_route_table_id = "rtb-0dbc8b1b5e435955e"
 az = ["us-east-1a","us-east-1b"]
 
-zone_id = "Z08613511MUJYQJT5FVB"
+zone_id = "Z08613511MUJYQJT5FVBT"
 ssh_ingress_cidr = ["172.31.39.152/32"]
 
 alb = {
