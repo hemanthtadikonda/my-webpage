@@ -102,7 +102,7 @@ resource "aws_lb_target_group" "public" {
 
 resource "aws_lb_target_group_attachment" "public" {
   target_group_arn = aws_lb_target_group.public.arn
-  target_id        = tolist(data.dns_a_record_set.private_lb_add.addrs)
+  target_id        = data.dns_a_record_set.private_lb_add.addrs
   port             = 80
   availability_zone = "all"
 }
