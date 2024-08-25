@@ -30,3 +30,33 @@ module "alb" {
   subnets = each.value[ "internal" ] ? local.app_subnets : data.aws_subnets.main.ids
 
 }
+
+module "app" {
+  source = "./app"
+  for_each = var.app
+
+  app_listen_port = each.value["app_listen_port"]
+  instance_type = each.value["instance_type"]
+  desired_capacity = each.value["desired_capacity"]
+  max_size = each.value["max_size"]
+  min_size = each.value["min_size"]
+  lb_priority = each.value["lb_priority"]
+
+  env = var.env
+  tags = var.tags
+  default_vpc_id = var.default_vpc_id
+  zone_id = var.zone_id
+  ssh_ingress_cidr = var.ssh_ingress_cidr
+
+  vpc_id = local.vpc_id
+  app_subnet_ids = local.app_subnets
+  sg_ingress_cidr = local.app_subnets_cidr
+
+  public_alb_name  = lookup(lookup(lookup(module.alb , "public" , null) , "alb" ,null), "dns_name",null)
+  private_alb_name = lookup(lookup(lookup(module.alb , "internal" , null) , "alb" ,null), "dns_name",null)
+  public_alb_listener =lookup(lookup(lookup(module.alb , "public" ,null ), "lb_listener" , null) , "arn" , null )
+  private_alb_listener = lookup(lookup(lookup(module.alb , "internal" ,null ), "lb_listener" , null) , "arn" , null )
+}
+
+
+

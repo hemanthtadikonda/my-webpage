@@ -30,6 +30,9 @@ default_vpc_id = "vpc-05642ce42b99a7fae"
 default_vpc_cidr_block = "172.31.0.0/16"
 def_route_table_id = "rtb-0dbc8b1b5e435955e"
 
+zone_id = "Z08613511MUJYQJT5FVB"
+ssh_ingress_cidr = "172.31.39.152/32"
+
 alb = {
   public = {
     internal = false
@@ -47,6 +50,30 @@ alb = {
   }
 }
 
+app = {
+  app_listen_port = 8501
+  instance_type = "t3.micro"
+  desired_capacity = 1
+  max_size = 1
+  min_size = 1
+  lb_priority =1
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+variable "zone_id" {}
+variable "ssh_ingress_cidr" {}
 
 
 
