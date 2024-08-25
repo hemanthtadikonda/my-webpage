@@ -102,7 +102,7 @@ resource "aws_lb_target_group" "public" {
 
 resource "aws_lb_target_group_attachment" "public" {
   target_group_arn = aws_lb_target_group.public.arn
-  target_id        = data.dns_a_record_set.private_lb_add.addrs
+  target_id        = [data.dns_a_record_set.private_lb_add.addrs]
   port             = 80
   availability_zone = "all"
 }
@@ -112,7 +112,7 @@ resource "aws_route53_record" "main" {
   name    = "${var.env}-hemanth"
   type    = "CNAME"
   ttl     = 30
-  records = var.public_alb_name
+  records = [var.public_alb_name]
 }
 
 resource "aws_lb_listener_rule" "main" {
