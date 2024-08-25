@@ -32,6 +32,8 @@ module "alb" {
 }
 
 module "app" {
+
+  depends_on = [module.alb]
   source = "./app"
   for_each = var.app
 
