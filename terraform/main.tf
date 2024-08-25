@@ -49,6 +49,7 @@ module "app" {
   default_vpc_id = var.default_vpc_id
   zone_id = var.zone_id
   ssh_ingress_cidr = var.ssh_ingress_cidr
+  az = var.az
 
   vpc_id = local.vpc_id
   app_subnet_ids = local.app_subnets

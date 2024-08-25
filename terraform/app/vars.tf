@@ -16,3 +16,4 @@ variable "private_alb_listener" {}
 variable "lb_priority" {}
 variable "public_alb_listener" {}
 variable "private_alb_name" {}
+variable "az" {}
