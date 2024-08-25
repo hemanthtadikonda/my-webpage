@@ -101,7 +101,7 @@ resource "aws_lb_target_group" "public" {
 }
 
 resource "aws_lb_target_group_attachment" "public" {
-  for_each = toset(data.dns_a_record_set.private_lb_add.addrs)
+  for_each = tolist(data.dns_a_record_set.private_lb_add.addrs)
   target_group_arn = aws_lb_target_group.public.arn
   target_id        = each.value
   port             = 80
