@@ -51,12 +51,15 @@ alb = {
 }
 
 app = {
-  app_listen_port = 8501
-  instance_type = "t3.micro"
-  desired_capacity = 1
-  max_size = 1
-  min_size = 1
-  lb_priority =1
+  my-app = {
+    app_listen_port = 8501
+    instance_type = "t3.micro"
+    desired_capacity = 1
+    max_size = 1
+    min_size = 1
+    lb_priority =1
+  }
+
 
 
 }
