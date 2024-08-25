@@ -1,0 +1,9 @@
+variable "internal" {}
+variable "env" {}
+variable "vpc_id" {}
+variable "tags" {}
+variable "sg_port" {}
+variable "sg_ingress_cidr" {}
+variable "lb_type" {}
+variable "subnets" {}
+variable "acm_certificate_arn" {}

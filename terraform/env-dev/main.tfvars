@@ -24,7 +24,29 @@ tags = {
 }
 
 env = "dev"
+acm_certificate_arn = "arn:aws:acm:us-east-1:043254050286:certificate/1365c29b-dc35-46e7-9935-174855a323a8"
 
 default_vpc_id = "vpc-05642ce42b99a7fae"
 default_vpc_cidr_block = "172.31.0.0/16"
 def_route_table_id = "rtb-0dbc8b1b5e435955e"
+
+alb = {
+  public = {
+    internal = false
+    lb_type = "application"
+    sg_port = 443
+    sg_ingress_cidr = [ "0.0.0.0/0" ]
+
+  }
+  private = {
+    internal  = true
+    lb_type = "application"
+    sg_port  = 80
+    sg_ingress_cidr = [ "172.31.0.0/16" , "10.0.0.0/24" ]
+
+  }
+}
+
+
+
+
