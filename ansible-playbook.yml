@@ -69,6 +69,6 @@
           clone: yes
 
      - name: Run Streamlit app
-       command: streamlit run /home/centos/my-webpage/app.py
+       command: nohup streamlit run /home/centos/my-webpage/app.py > app-output.log 2>&1 &
        args:
           chdir: /home/centos/my-webpage
