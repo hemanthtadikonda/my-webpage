@@ -76,7 +76,7 @@ resource "aws_lb_target_group" "main" {
     healthy_threshold   = 2
     interval            = 10
     path                = "/"
-    port                = var.app_listen_port
+    port                = 80
     timeout             = 2
     unhealthy_threshold = 2
     matcher             = "200"
