@@ -39,7 +39,7 @@ resource "aws_launch_template" "main" {
     tags          = merge(local.tags,{ Name = "${var.env}-myapp-template" })
   }
 
-  user_data = file("${path.module}/userdata.sh")
+  user_data = base64encode(file("${path.module}/userdata.sh"))
 }
 
 resource "aws_autoscaling_group" "main" {
