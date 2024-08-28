@@ -17,8 +17,8 @@ pipeline {
             }
             steps {
                 sh '''
-                    terraform init -backend-config=env-${ENV}/state.tfvars
-                    terraform plan -var-file=env-${ENV}/inputs.tfvars
+                    terraform init -upgrade
+                    terraform plan -var-file=env-${ENV}/main.tfvars
                 '''
             }
         }
