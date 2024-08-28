@@ -30,7 +30,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    pwd
+                    ls -lrt ; cd terraform; pwd
                     terraform ${ACTION} --auto-approve -var-file=env-${ENV}/main.tfvars
                 '''
             }
