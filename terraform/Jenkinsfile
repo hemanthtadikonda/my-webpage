@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    terraform init -upgrade
+                    terraform init
                     terraform plan -var-file=env-${ENV}/main.tfvars
                 '''
             }
