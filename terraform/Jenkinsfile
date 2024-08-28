@@ -1,0 +1,59 @@
+pipeline {
+    agent { label 'work station' }
+
+    options {
+        ansiColor('xterm')
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Choose Environment')
+        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Choose Action')
+        choice(name: 'Deployment Type', choices: ['Mutable', 'Immutable'], description: 'Choose your Deployment Type')
+    }
+
+    stages {
+
+        stage('Terraform Plan') {
+            when {
+                expression { params.'Deployment Type' != 'Mutable' }
+            }
+            steps {
+                sh '''
+                    terraform init -backend-config=env-${ENV}/state.tfvars
+                    terraform plan -var-file=env-${ENV}/inputs.tfvars
+                '''
+            }
+        }
+
+        stage('Terraform Run') {
+            when {
+                expression { params.'Deployment Type' != 'Mutable' }
+            }
+            steps {
+                sh '''
+                    terraform ${ACTION} --auto-approve -var-file=env-${ENV}/main.tfvars
+                '''
+            }
+        }
+
+        stage('Mutable Deployment Commands') {
+            when {
+                expression { params.'Deployment Type' == 'Mutable' }
+            }
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'my-credentials-id', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh '''
+                        aws ec2 describe-instances --filters "Name=tag:Name,Values=dev-myapp-asg" --query "Reservations[*].Instances[*].PrivateIpAddress" --output text > hosts
+                        ansible-playbook -i hosts ../ansible-playbook.yml -e ansible_user=$USERNAME -e ansible_password=$PASSWORD
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
