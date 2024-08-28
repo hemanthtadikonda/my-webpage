@@ -6,7 +6,7 @@ pipeline {
     parameters {
         choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Choose Environment')
         choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Choose Action')
-        choice(name: 'Deployment Type', choices: ['Mutable', 'Immutable'], description: 'Choose your Deployment Type')
+        choice(name: 'Deployment Type', choices: ['Immutable', 'Mutable'], description: 'Choose your Deployment Type')
     }
 
     stages {
