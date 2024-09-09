@@ -47,6 +47,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'my-credentials-id', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '''
                         aws ec2 describe-instances --filters "Name=tag:Name,Values=dev-myapp-asg" --query "Reservations[*].Instances[*].PrivateIpAddress" --output text > hosts
+                        ls -ltr ; pwd
                         ansible-playbook -i hosts ../ansible-playbook.yml -e ansible_user=$USERNAME -e ansible_password=$PASSWORD
                     '''
                 }
