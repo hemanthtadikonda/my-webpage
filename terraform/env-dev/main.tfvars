@@ -32,7 +32,7 @@ def_route_table_id = "rtb-0dbc8b1b5e435955e"
 az = ["us-east-1a","us-east-1b"]
 
 zone_id = "Z08613511MUJYQJT5FVBT"
-ssh_ingress_cidr = ["172.31.39.152/32"]
+ssh_ingress_cidr = ["172.31.34.184/32"]
 
 alb = {
   public = {
