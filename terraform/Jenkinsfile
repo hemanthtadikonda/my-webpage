@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     ls -lrt ; cd terraform; git checkout main ; git pull
-                    terraform init
+                    terraform init --backend-config=env-${ENV}/state.tfvars
                     terraform plan -var-file=env-${ENV}/main.tfvars
                 '''
             }
