@@ -3,7 +3,7 @@ kind: Service
 metadata:
    name: my-web-app
    labels:
-      app: go-web-app
+      app: my-web-app
 spec:
    type: ClusterIP
    selector:
